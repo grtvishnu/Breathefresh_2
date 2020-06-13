@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<style>
+   input[type=button] {
+      background-color: LightGray;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+   }
+</style>
+
+<body style="background-color:rgba(4, 223, 139, 0.801)">
+   <div>
+      {% for key, value in result.items() %}
+      <center>
+         <p style="font-size:30px;font-family:Arial;color:white;margin-bottom: 0;">Prediction</p>
+         <p style="font-size:200px;font-family:Arial;color:white;margin-bottom: 0;margin-top: 0em;">{{ value }}</p>
+         <p style="font-size:50px;font-family:Arial;color:white;margin-top: 0em;"><b>Enjoy</b></p>
+         <br>
+         <input type=button onClick="parent.location='http://127.0.0.1:5000/'" value='Retry'
+            style="color:black;"></input>
+      </center>
+      {% endfor %}
+   </div>
+</body>
+
+</html>
