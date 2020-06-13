@@ -25,7 +25,7 @@ def student():
 @app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
-        locat = request.form['loca']
+        city = request.form['loca']
 
         print("Before")
         result = model.predict([[no, p10, o3, p2]])[0]
