@@ -1,62 +1,61 @@
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
-<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+  />
+  <script
+    defer
+    src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+  ></script>
 
-<body>
-  <section class="hero is-primary is-bold">
-    <div class="hero-body">
-      <div class="container">
-        <h1 style="font-size: 80px;" class="title">
-          BreatheFresh
-        </h1>
-        <h2 style="font-size: 30px;" class="subtitle">
-          Air Quality Prediction
-        </h2>
+  <body>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 style="font-size: 80px;" class="title">
+            BreatheFresh
+          </h1>
+          <h2 style="font-size: 30px;" class="subtitle">
+            Air Quality Prediction
+          </h2>
+        </div>
       </div>
+    </section>
+    <div class="card-content">
+      <form action="http://localhost:5000/result" method="POST">
+        <p>
+          <b>
+            Location
+            <input
+              class="input is-success"
+              type="text"
+              name="loca"
+              placeholder="Enter Nearby City"
+          /></b>
+        </p>
+        <br />
+        <br />
+        <p>
+          <input
+            class="button is-primary"
+            type="submit"
+            value="submit"
+            placeholder="Primary input"
+          />
+        </p>
+        <a href="https://waqi.info/#/c/19.574/82.009/5.4z"
+          >Loacation based Measurements
+        </a>
+      </form>
     </div>
-  </section>
-  <div class="card-content">
-    <form action="http://localhost:5000/result" method="POST">
-      <p>
-        <b>
-          No2
-          <input class="input is-success" type="number" name="no" placeholder="1 - 600" /></b>
-      </p>
-      <br />
-      <p>
-        <b>
-          PM10
-          <input class="input is-success" type="number" name="p10" placeholder="1 - 270" /></b>
-      </p>
-      <br />
-      <p>
-        <b>
-          O3
-          <input class="input is-success" type="number" name="o3" placeholder="1 - 300" /></b>
-      </p>
-      <br />
-      <p>
-        <b>
-          PM2.5
-          <input class="input is-success" type="number" name="p2" placeholder="1 - 170" /></b>
-      </p>
-      <br />
-      <br />
-      <p>
-        <input class="button is-primary" type="submit" value="submit" placeholder="Primary input" />
-      </p>
-      <a href="https://waqi.info/#/c/19.574/82.009/5.4z">Loacation based Measurements </a>
-    </form>
-  </div>
-</body>
-<style>
-  form {
-    margin-top: 10px;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 100px;
-  }
-</style>
-
+  </body>
+  <style>
+    form {
+      margin-top: 10px;
+      margin-bottom: 100px;
+      margin-right: 150px;
+      margin-left: 100px;
+    }
+  </style>
 </html>

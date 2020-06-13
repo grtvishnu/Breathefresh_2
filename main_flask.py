@@ -25,10 +25,7 @@ def student():
 @app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
-        no = float(request.form['no'])
-        p10 = float(request.form['p10'])
-        o3 = float(request.form['o3'])
-        p2 = float(request.form['p2'])
+        locat = request.form['loca']
 
         print("Before")
         result = model.predict([[no, p10, o3, p2]])[0]
