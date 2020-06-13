@@ -34,7 +34,6 @@ def result():
         url = main_api + urllib.parse.urlencode({'city': city})
         json_data = requests.get(url).json()
         formatted_location = json_data['results'][0]['location']
-        print(formatted_location)
         for each in json_data['results'][0]['measurements']:
             # print(each['parameter'], each['value'])
             if each['parameter'] == 'co':
@@ -56,19 +55,19 @@ def result():
 
         if (pm25 < 12):
             val = "Good"
-            return render_template("good.html")
+            return render_template("good.html", result={"result": val})
         elif ((pm25 > 12.1) and (pm25 < 35.4)):
             val = "Moderate"
-            return render_template("moderate.html")
+            return render_template("moderate.html", result={"result": val})
         elif ((pm25 > 35.5) and (pm25 < 55.4)):
             val = "Unhealthy"
-            return render_template("unhealthy_sens.html")
+            return render_template("unhealthy_sens.html", result={"result": val})
         elif ((pm25 > 55.5) and (pm25 < 150.4)):
             val = "Very Unhealthy"
-            return render_template("unhealthy.html")
+            return render_template("unhealthy.html", result={"result": val})
         elif (pm25 > 250):
             val = "Hazardous"
-            return render_template("haz.html")
+            return render_template("haz.html", result={"result": val})
 
 
 if __name__ == '__main__':
