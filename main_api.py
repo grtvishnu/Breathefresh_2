@@ -21,4 +21,6 @@ for each in json_data['results'][0]['measurements']:
         pm25 = each['value']
     elif each['parameter'] == 'o3':
         o3 = each['value']
+    elif each['parameter'] == 'no2':
+        no2 = each['value']
 print(co)
