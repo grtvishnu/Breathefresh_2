@@ -24,3 +24,8 @@ for each in json_data['results'][0]['measurements']:
     elif each['parameter'] == 'no2':
         no2 = each['value']
 print(co)
+print(no2)
+print(o3)
+print(pm10)
+print(so2)
+print(pm25)
