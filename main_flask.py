@@ -3,17 +3,17 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestRegressor
 from flask import Flask, render_template, request
 import logging
 app = Flask(__name__)
 
-dataset = pd.read_csv("air_qua.csv")
-X = dataset[["no2",
-             "pm10", "o3", "pm25"]]
-y = dataset["AQI"]
+dataset = pd.read_csv("model_data.csv")
+X = dataset[["co",
+             "no2", "o3", "pm10", "so2"]]
+y = dataset["pm25"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
-model = RandomForestClassifier(n_estimators=500, max_features=2)
+model = RandomForestRegressor(n_estimators=500, max_features=2)
 model.fit(X_train, y_train)
 
 
