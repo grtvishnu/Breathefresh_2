@@ -21,7 +21,7 @@ model.fit(X_train, y_train)
 
 @app.route('/')
 def student():
-    return render_template('main_index.html')
+    return render_template('index.html')
 
 
 @app.route('/result', methods=['POST', 'GET'])
@@ -49,7 +49,7 @@ def result():
                 no2 = each['value']
 
         print("Before")
-        result = model.predict([[co, no2, o3, pm10, so2]])[0]
+        # result = model.predict([[co, no2, o3, pm10, so2]])[0]
         app.logger.warning(result)
 
         if (pm25 < 12):
