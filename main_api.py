@@ -23,9 +23,9 @@ for each in json_data['results'][0]['measurements']:
         o3 = each['value']
     elif each['parameter'] == 'no2':
         no2 = each['value']
-print(co)
-print(no2)
-print(o3)
-print(pm10)
-print(so2)
-print(pm25)
+print("CO :", co)
+print("NO2 :", no2)
+print("O3 :", o3)
+print("PM10 :", pm10)
+print("SO2 :", so2)
+print("PM2.5 :", pm25)
