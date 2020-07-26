@@ -45,32 +45,30 @@ def result():
                     so2 = each['value']
                 elif each['parameter'] == 'pm10':
                     pm10 = each['value']
-                elif each['parameter'] == 'pm25':
-                    pm25 = each['value']
                 elif each['parameter'] == 'o3':
                     o3 = each['value']
                 elif each['parameter'] == 'no2':
                     no2 = each['value']
 
-            print("Before")
-            # result = model.predict([[co, no2, o3, pm10, so2]])[0]
-            app.logger.warning(result)
+                print("Before")
+                result = model.predict([[co, no2, o3, pm10, so2]])[0]
+                app.logger.warning(result)
 
-            if (pm25 < 12):
-                val = "Good"
-                return render_template("good.html", result={"result": val}, pm25=pm25)
-            elif ((pm25 > 12.1) and (pm25 < 35.4)):
-                val = "Moderate"
-                return render_template("moderate.html", result={"result": val}, pm25=pm25)
-            elif ((pm25 > 35.5) and (pm25 < 55.4)):
-                val = "Unhealthy"
-                return render_template("unhealthy_sens.html", result={"result": val}, pm25=pm25)
-            elif ((pm25 > 55.5) and (pm25 < 150.4)):
-                val = "Very Unhealthy"
-                return render_template("unhealthy.html", result={"result": val}, pm25=pm25)
-            elif (pm25 > 250):
-                val = "Hazardous"
-                return render_template("haz.html", result={"result": val}, pm25=pm25)
+                if (result < 12):
+                    val = "Good"
+                    return render_template("good.html", result={"result": val}, pm25=result)
+                elif ((result > 12.1) and (result < 35.4)):
+                    val = "Moderate"
+                    return render_template("moderate.html", result={"result": val}, pm25=result)
+                elif ((result > 35.5) and (result < 55.4)):
+                    val = "Unhealthy"
+                    return render_template("unhealthy_sens.html", result={"result": val}, pm25=result)
+                elif ((result > 55.5) and (result < 150.4)):
+                    val = "Very Unhealthy"
+                    return render_template("unhealthy.html", result={"result": val}, pm25=result)
+                elif (result > 250):
+                    val = "Hazardous"
+                    return render_template("haz.html", result={"result": val}, pm25=result)
 
 
 if __name__ == '__main__':
