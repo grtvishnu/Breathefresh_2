@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<style>
+   input[type=button] {
+      background-color: LightGray;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+   }
+</style>
+
+<body style="background-color:rgba(63, 71, 68, 0.801)">
+   <div>
+      <center>
+         <p style="font-size:30px;font-family:Arial;color:white;margin-bottom: 0;">Oops</p>
+         <p style="font-size:100px;font-family:Arial;color:white;margin-bottom: 0;margin-top: 0em;">Location Data Is Unavalible</p>
+         <p style="font-size:50px;font-family:Arial;color:white;margin-top: 0em;"><b>Try again</b></p>
+         <br>
+         <input type=button onClick="parent.location='http://127.0.0.1:5000/'" value='Retry'
+            style="color:black;"></input>
+      </center>
+   </div>
+</body>
+
+</html>
