@@ -27,8 +27,8 @@ def student():
 @app.route('/result', methods=['POST', 'GET'])
 def result():
     if request.method == 'POST':
+        # city = request.form['no']
         city = format(request.form['loc'])
-        city=city.capitalize()
         main_api = 'http://api.openaq.org/v1/latest?'
 
         url = main_api + urllib.parse.urlencode({'city': city})
@@ -53,7 +53,7 @@ def result():
                     no2 = each['value']
 
             print("Before")
-            # result = model.predict([[co, no2, o3, pm10, so2]])[0]
+            result = model.predict([[co, no2, o3, pm10, so2]])[0]
             app.logger.warning(result)
 
             if (pm25 < 12):
