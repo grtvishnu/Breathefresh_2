@@ -1,3 +1,5 @@
+
+# Logic 
 n = int(input("Enter an even number:"))
 for i in range(1, n):
     for j in range(1, n):
