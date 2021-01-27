@@ -3,6 +3,8 @@ import requests
 
 main_api = 'http://api.openaq.org/v1/latest?'
 
+# Main Logic
+
 while True:
     city = input("Location :")
     url = main_api + urllib.parse.urlencode({'city': city})
